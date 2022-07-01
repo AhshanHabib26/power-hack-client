@@ -53,7 +53,7 @@ const UpdateItems = () => {
         <img className="w-[50px]" src={LogoImg} alt="" />
         <h1 className=" text-xl font-extrabold text-secondary ">Power Hack</h1>
       </div>
-      <div class="card max-w-lg mx-auto bg-base-100 border">
+      <div className="card max-w-lg mx-auto bg-base-100 border">
         <div className="card-body">
           <div>
             <form

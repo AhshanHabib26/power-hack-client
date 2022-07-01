@@ -67,7 +67,7 @@ const Login = () => {
                 type="password"
                 {...register("password")}
               />
-              <label class="label">
+              <label className="label">
                 <p>
                   You Have Not An Account, Please?{" "}
                   <Link

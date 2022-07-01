@@ -37,9 +37,9 @@ const ItemModal = () => {
 
   return (
     <div>
-      <input type="checkbox" id="item-modal" class="modal-toggle" />
-      <div class="modal modal-bottom sm:modal-middle">
-        <div class="modal-box">
+      <input type="checkbox" id="item-modal" className="modal-toggle" />
+      <div className="modal modal-bottom sm:modal-middle">
+        <div className="modal-box">
           <h1 className=" text-xl font-semibold text-secondary mb-3">
             Add New Bill
           </h1>
@@ -110,7 +110,7 @@ const ItemModal = () => {
                 </div>
                 <div>
                   <div>
-                    <label for="item-modal" class="btn btn-md btn-error">
+                    <label htmlFor="item-modal" className="btn btn-md btn-error">
                       Cancel
                     </label>
                   </div>

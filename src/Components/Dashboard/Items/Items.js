@@ -22,7 +22,7 @@ const Items = () => {
   
 
   useEffect(() => {
-    const url= `http://localhost:5000/billing-list-search-email?value=${value}&search=${searchData}`
+    const url= `https://power-hack-26.herokuapp.com/billing-list-search-email?value=${value}&search=${searchData}`
     fetch(url)
     .then( res => res.json())
     .then( result => setSearchData(result))
@@ -86,8 +86,8 @@ const Items = () => {
       <Header setSearchData={setSearchData}
       setValue={setValue}/>
       <div className="max-w-7xl mx-auto">
-        <div class="overflow-x-auto">
-          <table class="table table-zebra w-full">
+        <div className="overflow-x-auto">
+          <table className="table table-zebra w-full">
             <thead>
               <tr>
                 <th>Billing Id</th>
@@ -102,7 +102,7 @@ const Items = () => {
             <tbody>
               {data.map((item) => (
                 <>
-                  <tr>
+                  <tr key={item._id}>
                     <th>{item._id}</th>
                     <td>{item.name}</td>
                     <td>{item.email}</td>
@@ -111,7 +111,7 @@ const Items = () => {
                     <td>
                       <Link
                         to={`/dashboard/${item._id}`}
-                        class="btn btn-primary btn-sm"
+                        className="btn btn-primary btn-sm"
                       >
                         Edit
                       </Link>
@@ -119,7 +119,7 @@ const Items = () => {
                     <td>
                       <button
                         onClick={() => handleDeleteItem(item._id)}
-                        class="btn btn-secondary btn-sm"
+                        className="btn btn-secondary btn-sm"
                       >
                         Delete
                       </button>
@@ -146,12 +146,12 @@ const Items = () => {
             className="selectOption"
             onChange={(e) => setSize(e.target.value)}
           >
-            <option value="5">5</option>
-            <option value="10" selected>
+            <option defaultValue="5">5</option>
+            <option selected defaultValue="10" >
               10
             </option>
-            <option value="15">15</option>
-            <option value="20">20</option>
+            <option defaultValue="15">15</option>
+            <option defaultValue="20">20</option>
           </select>
         </div>
       </div>
