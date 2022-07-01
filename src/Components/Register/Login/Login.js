@@ -30,7 +30,8 @@ const Login = () => {
           toast.success("Welcome Our Awesome Dashboard");
           navigate('/dashboard')
         }else{
-          navigate('/login')
+          navigate('/signup')
+          toast.warning("Sorry! Please Create an Account?")
         }
       });
   };
