@@ -9,7 +9,6 @@ const Navbar = () => {
   const productPrice = product.map((price) => Number(price.amount));
   const initialValue = 0;
   const sumTotalValue = productPrice.reduce((prev, curv) => prev + curv, initialValue);
-  console.log(sumTotalValue)
 
   return (
     <div>

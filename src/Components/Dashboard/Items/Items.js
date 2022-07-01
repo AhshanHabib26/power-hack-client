@@ -12,10 +12,13 @@ const Items = () => {
   const [size, setSize] = useState(10);
 
   const { isLoading, error, data, refetch } = useQuery("InfoData", () =>
-    fetch(`https://power-hack-26.herokuapp.com/billing-list?page=${page}&size=${size}`).then(
-      (res) => res.json()
-    )
+    fetch(
+      `http://localhost:5000/billing-list?page=${page}&size=${size}`
+    ).then((res) => res.json())
   );
+ 
+
+
 
   useEffect(() => {
     fetch("https://power-hack-26.herokuapp.com/billing-list-count")
@@ -35,7 +38,7 @@ const Items = () => {
     return toast.error("Please Wait a Moment");
   }
 
-  const handleDeleteItem = id => {
+  const handleDeleteItem = (id) => {
     swal({
       title: "Are You Sure You Want to Delete?",
       icon: "warning",
