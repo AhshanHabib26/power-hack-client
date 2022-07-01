@@ -33,24 +33,27 @@ const Navbar = () => {
             </label>
             <ul
               tabindex="0"
-              class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+              class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-primary text-white rounded-box w-52"
             >
               <li>
-                <>Paid Total: $ {sumTotalValue}</>
+                <Link to=''>Paid Total: $ {sumTotalValue}</Link>
+              </li>
+              <li className=" my-3">
+                <Link to=''>Contact</Link>
+              </li>
+              <li>
+                <Link to=''>About</Link>
               </li>
             </ul>
           </div>
-          <Link to='' class="btn btn-ghost normal-case text-xl">PowerHack</Link>
+          <Link to='/dashboard' class="btn btn-ghost normal-case text-xl">PowerHack</Link>
         </div>
-        <div class="navbar-center hidden lg:flex">
+        <div class="navbar-end mr-0 lg:mr-10 hidden lg:flex">
           <ul class="menu menu-horizontal p-0">
             <li>
-              <>Paid Total: $ {sumTotalValue}</>
+              <Link to=''>Paid Total: $ {sumTotalValue}</Link>
             </li>
           </ul>
-        </div>
-        <div class="navbar-end">
-          <button  class="btn">Log Out</button>
         </div>
       </div>
     </div>

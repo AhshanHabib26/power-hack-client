@@ -7,6 +7,7 @@ import Signup from './Components/Register/Signup/Signup';
 import { ToastContainer } from 'react-toastify';
 import Dashboard from './Components/Dashboard/Dashboard';
 import UpdateItems from './Components/Dashboard/UpdateItems';
+import PageNotFound from './PageNotFound/PageNotFound';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path='/signup' element={<Signup/>}/>
         <Route path='/dashboard' element={<Dashboard/>}/>
         <Route path='dashboard/:id' element={<UpdateItems/>}/>
+        <Route path='*' element={<PageNotFound/>}/>
 
       </Routes>
       <ToastContainer/>
