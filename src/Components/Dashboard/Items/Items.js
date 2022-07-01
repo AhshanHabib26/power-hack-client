@@ -5,17 +5,31 @@ import Spinner from "../../Spinner/Spinner";
 import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
 import swal from "sweetalert";
+import Header from "../Header";
 
 const Items = () => {
   const [pageCount, setPageCount] = useState(0);
   const [page, setPage] = useState(0);
   const [size, setSize] = useState(10);
-
+  const [value, setValue] = useState("");
+  const [searchData, setSearchData] = useState([]);
+  
   const { isLoading, error, data, refetch } = useQuery("InfoData", () =>
-    fetch(
-      `https://power-hack-26.herokuapp.com/billing-list?page=${page}&size=${size}`
-    ).then((res) => res.json())
-  );
+  fetch(
+    `https://power-hack-26.herokuapp.com/billing-list?page=${page}&size=${size}`
+  ).then((res) => res.json())
+);
+  
+
+  useEffect(() => {
+    const url= `http://localhost:5000/billing-list-search-email?value=${value}&search=${searchData}`
+    fetch(url)
+    .then( res => res.json())
+    .then( result => setSearchData(result))
+  }, [searchData, value]);
+
+
+
  
 
 
@@ -69,6 +83,8 @@ const Items = () => {
 
   return (
     <div>
+      <Header setSearchData={setSearchData}
+      setValue={setValue}/>
       <div className="max-w-7xl mx-auto">
         <div class="overflow-x-auto">
           <table class="table table-zebra w-full">
