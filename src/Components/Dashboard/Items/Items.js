@@ -13,7 +13,7 @@ const Items = () => {
 
   const { isLoading, error, data, refetch } = useQuery("InfoData", () =>
     fetch(
-      `http://localhost:5000/billing-list?page=${page}&size=${size}`
+      `https://power-hack-26.herokuapp.com/billing-list?page=${page}&size=${size}`
     ).then((res) => res.json())
   );
  
