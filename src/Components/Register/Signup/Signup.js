@@ -50,19 +50,19 @@ const Signup = () => {
     <div>
       <div>
         <div className="min-h-screen  bg-neutral">
-          <div className="flex justify-center items-center mb-8 pt-8">
+          <div className="flex justify-center items-center mb-3 pt-3">
             <img className="w-[50px]" src={LogoImg} alt="" />
             <h1 className=" text-xl font-extrabold text-secondary ">
               Power Hack
             </h1>
           </div>
 
-          <div className="card max-w-lg mx-auto bg-base-100 border">
+          <div className="card max-w-xl mx-auto bg-base-100 border">
             <div className="card-body">
-              <h1 className=" text-3xl mt-[-10px]  font-semibold text-secondary">
+              <h1 className=" text-2xl mt-[-10px]  font-semibold text-secondary">
                 Signup
               </h1>
-              <p className=" text-lg text-secondary mb-4">
+              <p className=" text-md text-secondary mb-2">
                 Create New PowerHack Account
               </p>
               <div>
