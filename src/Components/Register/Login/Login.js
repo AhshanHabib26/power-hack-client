@@ -21,8 +21,6 @@ const Login = () => {
       method: "POST",
       headers: {
         "content-type": "application/json",
-        authorization: `Bearer ${localStorage.getItem('accessToken')}`
-        
       },
       body: JSON.stringify(userInfo),
     })
@@ -31,7 +29,6 @@ const Login = () => {
         if (data.success) {
           toast.success("Welcome Our Awesome Dashboard");
           navigate('/dashboard')
-          localStorage.setItem('accessToken', data.token);
         }else{
           navigate('/login')
         }

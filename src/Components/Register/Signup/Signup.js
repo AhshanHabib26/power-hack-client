@@ -32,11 +32,12 @@ const Signup = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data)
-        if (data.upsertedCount > 0) {
+        if (data.result.upsertedCount > 0) {
           navigate("/login");
+          localStorage.setItem('accessToken', data.token);
           toast.success("Your Account Create Succesfully");
 
-        } else if (data.matchedCount !== 0) {
+        } else if (data.result.matchedCount !== 0) {
           toast.info("User Already Exsits");
           navigate("/login");
         } else {
